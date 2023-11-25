@@ -17,6 +17,7 @@ function Confirm() {
 
     const [AirPopup, setAirPopup] = useState(null);
 
+
     const [saveBtn, setSaveBtn] = useState('Save');
 
     const [totalAbs, setTotalAbs] = useState('')
@@ -177,8 +178,6 @@ function Confirm() {
         try {
             const querySnapshot = await getDocs(q);
             if (!querySnapshot.empty) {
-                // The user profile exists in Firestore. Continue with the home page.
-                // You can access user data using querySnapshot.docs[0].data()
                 
             } else {
                 // The user profile doesn't exist in Firestore. Navigate to the profile screen.
@@ -223,28 +222,6 @@ function Confirm() {
             })
         })
     }
-
-    // await sendWt().then(() => {
-    //     pushChart().then(async () => {
-    //         localStorage.removeItem('absentees')
-    //         localStorage.removeItem('class')
-    //         localStorage.removeItem('nonAbsentees')
-    //         localStorage.removeItem('period')
-    //         toast.success('Attendance marked', {
-    //             position: "top-center",
-    //             autoClose: 4000,
-    //             hideProgressBar: true,
-    //             closeOnClick: true,
-    //             pauseOnHover: false,
-    //             draggable: true,
-    //             progress: undefined
-    //         })
-    //         setTimeout(() => {
-    //             setSaveBtn('saved')
-    //             navigate('/')
-    //         }, 3000)
-    //     })
-    // })
 
     return (
         <>

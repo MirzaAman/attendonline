@@ -33,33 +33,33 @@ function Class() {
 
     useEffect(() => {
         const checkUserProfileExists = async () => {
-          const user = auth.currentUser;
-          if (!user) {
-            // User is not logged in, handle this case accordingly
-            return;
-          }
-
-          const uid = user.uid;
-          const userProfilesRef = collection(db, 'profiles', uid, 'personal');
-          const q = query(userProfilesRef, where('uid', '==', uid));
-
-          try {
-            const querySnapshot = await getDocs(q);
-            if (!querySnapshot.empty) {
-              // The user profile exists in Firestore. Continue with the home page.
-              // You can access user data using querySnapshot.docs[0].data()
-              return true;
-            } else {
-              // The user profile doesn't exist in Firestore. Navigate to the profile screen.
-              navigate('/en/auth/user/profile');
+            const user = auth.currentUser;
+            if (!user) {
+                // User is not logged in, handle this case accordingly
+                return;
             }
-          } catch (error) {
-            console.error('Error checking user profile: ', error);
-          }
+
+            const uid = user.uid;
+            const userProfilesRef = collection(db, 'profiles', uid, 'personal');
+            const q = query(userProfilesRef, where('uid', '==', uid));
+
+            try {
+                const querySnapshot = await getDocs(q);
+                if (!querySnapshot.empty) {
+                    // The user profile exists in Firestore. Continue with the home page.
+                    // You can access user data using querySnapshot.docs[0].data()
+                    return true;
+                } else {
+                    // The user profile doesn't exist in Firestore. Navigate to the profile screen.
+                    navigate('/en/auth/user/profile');
+                }
+            } catch (error) {
+                console.error('Error checking user profile: ', error);
+            }
         };
 
         checkUserProfileExists()
-      }, [])
+    }, [])
 
 
     useEffect(() => {
@@ -221,12 +221,13 @@ function Class() {
             {
                 isLoading ?
                     <div className="csx">
-                        <div className="my-4">.</div>
+                        <div className="my-4">
+                        </div>
                         <div className="containerbv"><center><h5>Loading...</h5></center></div>
                     </div>
                     :
                     <div className="container">
-                        <div className="my-5">.</div>
+                        <div className="my-5"><Link to={`/`}><i class="fa-solid fa-arrow-left" style={{ fontSize: 25, cursor: 'pointer' }} ></i></Link></div>
                         <h1 className="my-4">{classNamee}</h1>
                         <div class="pricing-header p-3 pb-md-4 mx-auto text-start">
                             <h1 class="display-4 fw-normal text-body-emphasis">Students list</h1>

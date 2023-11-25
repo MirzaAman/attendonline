@@ -1,26 +1,3 @@
-// import React from 'react';
-// import ReactDOM from 'react-dom/client';
-// import App from './App.js';
-// import ProfilePage from './Pages/Profile.jsx'
-// import Login from './Pages/Login.jsx'
-// import { BrowserRouter as Router, Routes, Route, } from 'react-router-dom'
-// import Class from './Pages/Class.jsx'
-
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(
-//   <React.StrictMode>
-//     <Router>
-//       <Routes>
-//         <Route element={<App />} path='/' />
-//         <Route element={<ProfilePage />} path='/en/auth/user/profile' />
-//         <Route element={<Login/>} path='/en/accounts/login' />
-//         <Route element={<Class/>} path='/en/auth/class/:classNamee' />
-//         <Route element={<Class/>} path='/en/auth/class/:classNamee' />
-//       </Routes>
-//       {/* /en/auth/class/ */}
-//     </Router>
-//   </React.StrictMode>
-// );
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route, } from 'react-router-dom'
